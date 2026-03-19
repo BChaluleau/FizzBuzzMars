@@ -9,6 +9,7 @@ public class FizzBuzzer {
 
 	public String play() {
 		if (turn == MAGIC_KEY) {
+			turn++;
 			return MAGIC_VALUE;
 		}
 
