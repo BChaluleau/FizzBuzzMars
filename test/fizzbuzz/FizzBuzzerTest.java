@@ -17,6 +17,7 @@ class FizzBuzzerTest {
 	@Test
 	void testDebutDePartie() {
 		assertEquals("1", fb.play());
+		assertEquals("2", fb.play());
 	}
 
 }
