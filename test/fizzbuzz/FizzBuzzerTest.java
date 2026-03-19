@@ -54,10 +54,20 @@ class FizzBuzzerTest {
 		assertEquals("4", fb.play());
 	}
 
-	private void preshot(int nbTours) {
-		for (int i = 0; i < nbTours; i++) {
-			fb.play();
+	@Test
+	void testPartieComplete() {
+		String expected = "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz, Fizz, 22, 23, Fizz, Buzz, 26, Fizz, 28, 29, FizzBuzz, 31, 32, Fizz, 34, Buzz, Fizz";
+		String actual = preshot(36);
+		assertEquals(expected, actual);
+	}
+
+	private String preshot(int nbTours) {
+		StringBuilder sb = new StringBuilder(fb.play());
+		for (int i = 0; i < nbTours - 1; i++) {
+			sb.append(", ");
+			sb.append(fb.play());
 		}
+		return sb.toString();
 	}
 
 }
