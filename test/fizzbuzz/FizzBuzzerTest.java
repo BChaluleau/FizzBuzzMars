@@ -27,6 +27,12 @@ class FizzBuzzerTest {
 	}
 
 	@Test
+	void testPremierBuzz() {
+		preshot(4);
+		assertEquals("Buzz", fb.play());
+	}
+
+	@Test
 	void testDebutPartie() {
 		preshot(3);
 		assertEquals("4", fb.play());

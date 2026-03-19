@@ -2,20 +2,24 @@ package fizzbuzz;
 
 public class FizzBuzzer {
 
-	private static int MAGIC_KEY = 3;
-	private static String MAGIC_VALUE = "Fizz";
+	private static int MAGIC_KEYS[] = { 3, 5 };
+	private static String MAGIC_VALUES[] = { "Fizz", "Buzz" };
 
 	private int turn = 1;
 
 	public String play() {
-		if (turn == MAGIC_KEY) {
-			turn++;
-			return MAGIC_VALUE;
-		}
-
-		String answer = "%d".formatted(turn);
+		String answer = turnToAnswer();
 		turn++;
 		return answer;
+	}
+
+	private String turnToAnswer() {
+		for (int i = 0; i < MAGIC_KEYS.length; i++) {
+			if (MAGIC_KEYS[i] == turn) {
+				return MAGIC_VALUES[i];
+			}
+		}
+		return "%d".formatted(turn);
 	}
 
 }
