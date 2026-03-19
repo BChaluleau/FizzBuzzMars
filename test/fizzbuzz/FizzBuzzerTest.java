@@ -33,6 +33,16 @@ class FizzBuzzerTest {
 	}
 
 	@Test
+	void testMilieuPartie() {
+		preshot(5);
+		assertEquals("Fizz", fb.play());
+		assertEquals("7", fb.play());
+		assertEquals("8", fb.play());
+		assertEquals("Fizz", fb.play());
+		assertEquals("Buzz", fb.play());
+	}
+
+	@Test
 	void testDebutPartie() {
 		preshot(3);
 		assertEquals("4", fb.play());
